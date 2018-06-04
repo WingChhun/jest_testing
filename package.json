@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "tests",
   "version": "1.0.0",
   "description": "",
@@ -16,4 +17,20 @@
   "dependencies": {
     "node-fetch": "^2.1.2"
   }
+=======
+    "name": "test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "jest --watchAll"
+    },
+    "author": "James Chhun",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^23.1.0",
+        "node-fetch": "^2.1.2"
+    }
+>>>>>>> 69a85eea0910b7910309e1184f049c9c3492b4ac
 }
