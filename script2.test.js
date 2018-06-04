@@ -21,3 +21,32 @@ describe("Work with Swapi API", () => {
             });
     });
 });
+
+it('getPeople returns count and results', () => {
+    expect.assertions(4);
+    //*mock - return a Promise
+    const mockFetch = jest
+        .fn()
+        .mockReturnValue(Promise.resolve({
+            json: () => Promise.resolve({
+                count: 87,
+                results: [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ]
+            })
+
+        }));
+    return swapi
+        .getPeople(mockFetch)
+        .then(data => {
+            expect(mockFetch.mock.calls.length).toBe(1);
+            expect(mockFetch).toBeCalledWith("https://swapi.co/api/people")
+            expect(data.results.length).toBeGreaterThan(5);
+            expect(data.count).toEqual(87);
+        })
+});
